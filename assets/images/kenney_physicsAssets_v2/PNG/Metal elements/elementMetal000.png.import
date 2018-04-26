@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/elementMetal000.png-0d40011154cb954cef742f8e8150cd74.stex"
+
+[deps]
+
+source_file="res://assets/images/kenney_physicsAssets_v2/PNG/Metal elements/elementMetal000.png"
+source_md5="c1dd735c8caaa8cda323c1e941348ac0"
+
+dest_files=[ "res://.import/elementMetal000.png-0d40011154cb954cef742f8e8150cd74.stex" ]
+dest_md5="208bf0c4188704db0ba97353fc07205f"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

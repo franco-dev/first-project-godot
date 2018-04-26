@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/elementStone053.png-8f69cbc0d65064f0abfc8c05a915df8b.stex"
+
+[deps]
+
+source_file="res://assets/images/kenney_physicsAssets_v2/PNG/Stone elements/elementStone053.png"
+source_md5="58076e423a0acb4e96a82f599dee2907"
+
+dest_files=[ "res://.import/elementStone053.png-8f69cbc0d65064f0abfc8c05a915df8b.stex" ]
+dest_md5="5591b14564238c988b8947f7caaabad4"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

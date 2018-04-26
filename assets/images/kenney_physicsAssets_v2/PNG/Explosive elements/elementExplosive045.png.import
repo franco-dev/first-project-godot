@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/elementExplosive045.png-1feb61564d8cdfea234feb12b7e30a6f.stex"
+
+[deps]
+
+source_file="res://assets/images/kenney_physicsAssets_v2/PNG/Explosive elements/elementExplosive045.png"
+source_md5="0f27f9eb58d6aaf6fbee1c1f0c6f3525"
+
+dest_files=[ "res://.import/elementExplosive045.png-1feb61564d8cdfea234feb12b7e30a6f.stex" ]
+dest_md5="b8b09f1001700d38cb5803250ddddf22"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
