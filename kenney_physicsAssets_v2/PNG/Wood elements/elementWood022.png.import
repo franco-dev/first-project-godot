@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/elementWood022.png-02b843d1eabcc62b1d607db5ffe4dd3f.stex"
+
+[deps]
+
+source_file="res://kenney_physicsAssets_v2/PNG/Wood elements/elementWood022.png"
+source_md5="25e68c9880b02b6d74c3572ffdb46340"
+
+dest_files=[ "res://.import/elementWood022.png-02b843d1eabcc62b1d607db5ffe4dd3f.stex" ]
+dest_md5="30ff06b3425c6f96cf4323d3d562f59b"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

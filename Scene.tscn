@@ -1,0 +1,184 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://kenney_physicsAssets_v2/PNG/Metal elements/elementMetal011.png" type="Texture" id=1]
+[ext_resource path="res://kenney_physicsAssets_v2/PNG/Metal elements/elementMetal018.png" type="Texture" id=2]
+[ext_resource path="res://kenney_physicsAssets_v2/PNG/Metal elements/elementMetal001.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends RigidBody2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar
+	#print(body);
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 34.9128, 18.5994 )
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends CollisionShape2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _physics_process(delta):
+	
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 67.1237, 70.3669 )
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 35.7783
+
+[node name="Scene" type="Node" index="0"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 324.533, 16.8945 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="elementMetal011" type="Sprite" parent="RigidBody2D" index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
+
+scale = Vector2( 1.00311, 1.88642 )
+shape = SubResource( 2 )
+script = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." index="1"]
+
+position = Vector2( 347.827, 113.233 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="elementMetal011" type="Sprite" parent="RigidBody2D2" index="0"]
+
+position = Vector2( -5.03421, -0.201736 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" index="1"]
+
+position = Vector2( -5.01557, -0.29219 )
+scale = Vector2( 1.00311, 1.88642 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="elementMetal018" type="Sprite" parent="StaticBody2D" index="0"]
+
+position = Vector2( 286.381, 440.42 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+position = Vector2( 286.466, 440.161 )
+scale = Vector2( 1.04384, 0.995403 )
+shape = SubResource( 4 )
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 189.687, -287.32 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="elementMetal001" type="Sprite" parent="RigidBody2D3" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" index="1"]
+
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="KinematicBody2D" parent="." index="4" instance=ExtResource( 4 )]
+
+

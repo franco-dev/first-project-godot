@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/elementGlass006.png-6779980a717e160c9b1fad4c452fe456.stex"
+
+[deps]
+
+source_file="res://kenney_physicsAssets_v2/PNG/Glass elements/elementGlass006.png"
+source_md5="e654c2d934831ec1fc58c976fbf48c86"
+
+dest_files=[ "res://.import/elementGlass006.png-6779980a717e160c9b1fad4c452fe456.stex" ]
+dest_md5="abe0e4d89045d307acb49a55e4b381bb"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

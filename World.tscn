@@ -1,0 +1,218 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://kenney_physicsAssets_v2/PNG/Other/grass.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	var vikingo = preload(\"res://vikingo.tscn\").instance();
+	print(vikingo.get_node(\"KinematicBody2D/vikingo2D\"));
+	var sprite_vikingo = vikingo.get_node(\"KinematicBody2D/vikingo2D\");
+	var collide_vikingo = vikingo.get_node(\"KinematicBody2D/CollisionShape2D\");
+	collide_vikingo.set_scale(Vector2(0.2, 0.2));
+	sprite_vikingo.set_scale(Vector2(0.2, 0.2))
+	collide_vikingo.set_position(Vector2(collide_vikingo.get_position().x, collide_vikingo.get_position().y*0.2));
+	print(collide_vikingo.get_scale());
+	add_child(vikingo);
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9915, 32.0012 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 175.067, 34.9945 )
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Camera2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_process(true);
+	
+
+func _process(delta):
+	set_position(get_node(\"../KinematicBody2D\").get_position())
+	print();
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[node name="World" type="Node"]
+
+script = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 477.132, -444.864 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="icon" type="Sprite" parent="KinematicBody2D" index="1"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+position = Vector2( 350.106, 445 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass" type="Sprite" parent="StaticBody2D" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass2" type="Sprite" parent="StaticBody2D" index="1"]
+
+position = Vector2( 70, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass3" type="Sprite" parent="StaticBody2D" index="2"]
+
+position = Vector2( 140, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass4" type="Sprite" parent="StaticBody2D" index="3"]
+
+position = Vector2( -70, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass5" type="Sprite" parent="StaticBody2D" index="4"]
+
+position = Vector2( -140, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="5"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( 700, 445 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass" type="Sprite" parent="StaticBody2D2" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="grass2" type="Sprite" parent="StaticBody2D2" index="1"]
+
+position = Vector2( 70, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass3" type="Sprite" parent="StaticBody2D2" index="2"]
+
+position = Vector2( 140, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass4" type="Sprite" parent="StaticBody2D2" index="3"]
+
+position = Vector2( -70, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="grass5" type="Sprite" parent="StaticBody2D2" index="4"]
+
+position = Vector2( -140, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="5"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = SubResource( 4 )
+
+
