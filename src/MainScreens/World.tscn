@@ -14,30 +14,18 @@ script/source = "extends Node
 
 func _ready():
 	var vikingo = preload(\"res://src/Actors/vikingo.tscn\").instance();
-	print(vikingo.get_node(\"KinematicBody2D/vikingo2D\"));
-	var sprite_vikingo = vikingo.get_node(\"KinematicBody2D/vikingo2D\");
-	var collide_vikingo = vikingo.get_node(\"KinematicBody2D/CollisionShape2D\");
-	collide_vikingo.set_scale(Vector2(0.2, 0.2));
-	sprite_vikingo.set_scale(Vector2(0.2, 0.2))
-	collide_vikingo.set_position(Vector2(collide_vikingo.get_position().x, collide_vikingo.get_position().y*0.2));
-	print(collide_vikingo.get_scale());
+	var k_vikingo = vikingo.get_node(\"KinematicBody2D\");
+	var camera = vikingo.get_node(\"camera_player\");
+	k_vikingo.set_scale(Vector2(-0.2, 0.2))
+	k_vikingo.set_position(Vector2(400, -400));
 	add_child(vikingo);
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	add_child(camera);
 "
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31.9915, 32.0012 )
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 175.067, 34.9945 )
 
 [sub_resource type="GDScript" id=4]
 
@@ -59,19 +47,26 @@ func _process(delta):
 #	pass
 "
 
-[node name="World" type="Node"]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 175.067, 34.9945 )
+
+[node name="World" type="Node" index="0"]
 
 script = SubResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 477.132, -444.864 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,9 +80,36 @@ shape = SubResource( 2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
 
-position = Vector2( 350.106, 445 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 350, 445 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -137,8 +159,9 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 700, 445 )
 input_pickable = false
 collision_layer = 1
@@ -188,31 +211,5 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
-
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 0.5, 0.5 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-script = SubResource( 4 )
 
 
