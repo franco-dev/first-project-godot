@@ -27,7 +27,7 @@ func _ready():
 custom_solver_bias = 0.0
 extents = Vector2( 31.9915, 32.0012 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Camera2D
 
@@ -47,7 +47,7 @@ func _process(delta):
 #	pass
 "
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 175.067, 34.9945 )
@@ -104,7 +104,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = SubResource( 4 )
+script = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
@@ -156,7 +156,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="5"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="3"]
@@ -209,7 +209,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="5"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 
